@@ -19,60 +19,13 @@ public class Account {
 	}
 
 	// Setters and Getters
-	public Customer getC() {
-		return C;
-	}
-
-	public void setC(Customer c) {
-		C = c;
-	}
 
 	public int getAcc_no() {
 		return Acc_no;
 	}
 
-	public void setAcc_no(int acc_no) {
-		Acc_no = acc_no;
-	}
-
-	public static int getPrevious_no() {
-		return previous_no;
-	}
-
-	public static void setPrevious_no(int previous_no) {
-		Account.previous_no = previous_no;
-	}
-
-	public static double getInterest_rate() {
-		return interest_rate;
-	}
-
 	public void setInterest_rate(double interest_rate) {
 		Account.interest_rate = interest_rate;
-	}
-
-	public boolean isChecking() {
-		return Checking;
-	}
-
-	public void setChecking(boolean checking) {
-		Checking = checking;
-	}
-
-	public int getBalance() {
-		return balance;
-	}
-
-	public void setBalance(int balance) {
-		this.balance = balance;
-	}
-
-	public int getTransactions() {
-		return transactions;
-	}
-
-	public void setTransactions(int transactions) {
-		this.transactions = transactions;
 	}
 
 	// member functions
@@ -140,20 +93,22 @@ public class Account {
 		}
 	}
 
-	public void displayDeductions() {
+	public boolean displayDeductions() {
 		if (Checking == false) { // savings account
 			double zakat = (balance * 2.5) / 100;
 			System.out.print("Deductions\nZakat= Rs." + zakat);
-		} else {
+			return true;
+		} else {	//checking account
 			double tax = 0;
 			if (transactions > 2) {
 				tax = transactions * 10;
 			}
 			System.out.print("Deductions\nTax= Rs." + tax);
-		}
+			return true;
+		}	
 	}
 
-	public void displayDetails() {
+	public boolean displayDetails() {
 		System.out.println("Account Details");
 		System.out.println("Customer name: " + C.getName());
 		System.out.println("Account Number: " + Acc_no);
@@ -163,6 +118,7 @@ public class Account {
 		} else {
 			System.out.println("Account Type: Savings");
 		}
+		return true;
 	}
 
 }
