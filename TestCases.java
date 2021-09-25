@@ -106,4 +106,28 @@ public class TestCases {
 		double interest = 200000 * (9.0 / 100.0);
 		assertNotEquals((int) interest, (int) result);
 	}
+	@Test
+	public void test11() { // Positive Test Case
+		System.out.println("Test 11 Executed:");
+		boolean b=A2.displayDeductions();
+		assertTrue(b);		
+	}
+	@Test
+	public void test12() { // Positive Test Case
+		System.out.println("Test 12 Executed:");
+		boolean b=A2.displayDetails();
+		assertTrue(b);		
+	}
+	@Test
+	public void test13() { // Positive Test Case
+		System.out.println("Test 13 Executed:");
+		boolean b=A1.displayDetails();
+		assertTrue(b);		
+	}
+	@Test
+	public void test14() { // Positive Test Case
+		System.out.println("Test 14 Executed:");
+		boolean b=A1.displayDeductions();
+		assertTrue(b);		
+	}
 }

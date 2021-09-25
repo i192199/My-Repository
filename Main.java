@@ -117,6 +117,7 @@ public class Main {
 					}
 				}
 				break;
+				
 			case 4:
 				System.out.println("Enter Interest rate %");
 				double rate = myObj.nextDouble();
